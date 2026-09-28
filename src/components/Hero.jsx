@@ -61,11 +61,19 @@ function Hero() {
       const x = (clientX / window.innerWidth - 0.5) * 20;
       const y = (clientY / window.innerHeight - 0.5) * 20;
 
-      gsap.to(heroRef.current, {
-        backgroundPosition: `${50 + x / 3}% ${50 + y / 3}%`,
+      gsap.to(".stars-back", {
+         x: x * 0.5,
+        y: y * 0.5,
         duration: 1,
         ease: "power2.out",
       });
+
+      gsap.to(".stars-front", {
+        x: x,
+        y: y,
+       duration: 0.8,
+      ease: "power2.out",
+     });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -78,6 +86,8 @@ function Hero() {
   return (
     <main ref={heroRef} className="hero">
       <div className="hero-overlay"></div>
+      <div className="stars stars-back"></div>
+      <div className="stars stars-front"></div>
 
       <div className="hero-content">
         <p className="eyebrow">A JOURNEY THROUGH</p>

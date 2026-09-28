@@ -75,40 +75,30 @@ function Hero() {
        duration: 0.8,
       ease: "power2.out",
      });
+     gsap.to(".moon", {
+      x: x * 0.4,
+       y: y * 0.4,
+       duration: 1.2,
+     ease: "power2.out",
+     });
+     gsap.to(".mountains-front", {
+        x: x * 1.5,
+        y: y * 0.5,
+         duration: 0.8,
+        ease: "power2.out",
+    });
+    gsap.to(".fog-one", {
+      x: x * 2,
+     duration: 1.5,
+       ease: "power2.out",
+    });
+    gsap.to(".fog-two", {
+         x: x * -1.5,
+       duration: 1.8,
+      ease: "power2.out",
+    });
     };
 
-    gsap.to(".moon", {
-  x: x * 0.4,
-  y: y * 0.4,
-  duration: 1.2,
-  ease: "power2.out",
-});
-
-gsap.to(".mountains-back", {
-  x: x * 0.8,
-  y: y * 0.3,
-  duration: 1,
-  ease: "power2.out",
-});
-
-gsap.to(".mountains-front", {
-  x: x * 1.5,
-  y: y * 0.5,
-  duration: 0.8,
-  ease: "power2.out",
-});
-
-gsap.to(".fog-one", {
-  x: x * 2,
-  duration: 1.5,
-  ease: "power2.out",
-});
-
-gsap.to(".fog-two", {
-  x: x * -1.5,
-  duration: 1.8,
-  ease: "power2.out",
-});
 
     window.addEventListener("mousemove", handleMouseMove);
 

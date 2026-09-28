@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Landscape from "./Landscape";
 
 function Hero() {
   const titleRef = useRef(null);
@@ -88,6 +89,7 @@ function Hero() {
       <div className="hero-overlay"></div>
       <div className="stars stars-back"></div>
       <div className="stars stars-front"></div>
+      <Landscape />
 
       <div className="hero-content">
         <p className="eyebrow">A JOURNEY THROUGH</p>

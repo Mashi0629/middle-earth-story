@@ -9,52 +9,145 @@ function Hero() {
   const heroRef = useRef(null);
 
   useEffect(() => {
-    const timeline = gsap.timeline();
+    const timeline = gsap.timeline({
+  defaults: {
+    ease: "power2.out",
+  },
+});
 
-    timeline
-      .fromTo(
-        titleRef.current,
-        {
-          opacity: 0,
-          y: 80,
-          scale: 0.9,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.5,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        subtitleRef.current,
-        {
-          opacity: 0,
-          y: 30,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-        },
-        "-=0.8"
-      )
-      .fromTo(
-        buttonRef.current,
-        {
-          opacity: 0,
-          y: 20,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-        },
-        "-=0.5"
-      );
+timeline
+  // Stars
+  .to(".stars-back", {
+    opacity: 0.35,
+    duration: 2,
+  })
+
+  .to(
+    ".stars-front",
+    {
+      opacity: 0.5,
+      duration: 2,
+    },
+    "-=1.5"
+  )
+
+  // Moon
+  .to(
+    ".moon",
+    {
+      opacity: 1,
+      scale: 1,
+      duration: 2,
+      ease: "power2.out",
+    },
+    "-=1.2"
+  )
+
+  // Distant mountains
+  .to(
+    ".mountains-back",
+    {
+      opacity: 0.45,
+      y: 0,
+      duration: 2,
+      ease: "power3.out",
+    },
+    "-=1.2"
+  )
+
+  // Front mountains
+  .to(
+    ".mountains-front",
+    {
+      opacity: 0.9,
+      y: 0,
+      duration: 2,
+      ease: "power3.out",
+    },
+    "-=1.5"
+  )
+
+  // Fog
+  .to(
+    ".fog-one",
+    {
+      opacity: 0.7,
+      duration: 2,
+    },
+    "-=1.3"
+  )
+
+  .to(
+    ".fog-two",
+    {
+      opacity: 0.5,
+      duration: 2,
+    },
+    "-=1.5"
+  )
+
+  // Eyebrow
+  .fromTo(
+    ".eyebrow",
+    {
+      opacity: 0,
+      y: 20,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    },
+    "-=1"
+  )
+
+  // Main title
+  .fromTo(
+    titleRef.current,
+    {
+      opacity: 0,
+      y: 80,
+      scale: 0.9,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 1.5,
+      ease: "power3.out",
+    },
+    "-=0.6"
+  )
+
+  // Story text
+  .fromTo(
+    subtitleRef.current,
+    {
+      opacity: 0,
+      y: 30,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    },
+    "-=0.8"
+  )
+
+  // Button
+  .fromTo(
+    buttonRef.current,
+    {
+      opacity: 0,
+      y: 20,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+    },
+    "-=0.5"
+  );
 
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;

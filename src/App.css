@@ -246,7 +246,7 @@ body {
     20px 30px,
     100px 80px;
 
-  opacity: 0.35;
+  opacity: 0;
 }
 
 .stars-front {
@@ -262,7 +262,7 @@ body {
     40px 70px,
     150px 20px;
 
-  opacity: 0.5;
+  opacity: 0;
 }
 /* =========================
    MIDDLE-EARTH LANDSCAPE
@@ -295,6 +295,8 @@ body {
   border-radius: 50%;
 
   background: #e8dfc5;
+  opacity: 0;
+  transform: scale(0.7);
 
   box-shadow:
     0 0 30px rgba(232, 223, 197, 0.25),
@@ -339,9 +341,9 @@ body {
 
   height: 45%;
 
-  opacity: 0.45;
+  opacity: 0;
 
-  transform: scale(1.05);
+  transform: translateY(100px) scale(1.05);
 }
 
 .mountains-back span {
@@ -381,7 +383,8 @@ body {
 
   height: 42%;
 
-  opacity: 0.9;
+  opacity: 0;
+  transform: translateY(150px);
 }
 
 .mountains-front span {
@@ -425,6 +428,7 @@ body {
   border-radius: 50%;
 
   filter: blur(35px);
+  opacity: 0;
 
   background: rgba(180, 185, 175, 0.08);
 

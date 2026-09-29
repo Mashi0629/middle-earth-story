@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Hero from "./components/Hero";
 import Shire from "./components/Shire";
+import Rivendell from "./components/Rivendell";
 import "./App.css";
 
 function App() {
@@ -22,9 +23,7 @@ function App() {
       )}
 
       {currentScene === "rivendell" && (
-        <div className="coming-soon">
-          RIVENDELL
-        </div>
+        <Rivendell />
       )}
 
     </div>

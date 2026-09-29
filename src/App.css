@@ -1491,3 +1491,567 @@ body {
 
   transform: translateY(-3px);
 }
+/* =========================================
+   RIVENDELL
+========================================= */
+
+.rivendell {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #080b24 0%,
+      #101a42 45%,
+      #172d4d 70%,
+      #081b22 100%
+    );
+
+  color: #ffffff;
+}
+
+/* SKY */
+
+.rivendell-sky {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(105, 130, 255, 0.2),
+      transparent 35%
+    );
+
+  z-index: 0;
+}
+
+/* MOON */
+
+.rivendell-moon {
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  top: 12%;
+  right: 15%;
+
+  border-radius: 50%;
+
+  background: #e8efff;
+
+  box-shadow:
+    0 0 30px rgba(180, 210, 255, 0.8),
+    0 0 80px rgba(120, 160, 255, 0.4);
+
+  z-index: 1;
+}
+
+/* AURORA */
+
+.aurora {
+  position: absolute;
+
+  width: 55%;
+  height: 220px;
+
+  top: 12%;
+
+  border-radius: 50%;
+
+  filter: blur(45px);
+
+  opacity: 0.35;
+
+  z-index: 1;
+}
+
+.aurora-one {
+  left: -10%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(100, 210, 190, 0.7),
+      transparent 70%
+    );
+
+  transform: rotate(-12deg);
+}
+
+.aurora-two {
+  right: -10%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(130, 120, 255, 0.6),
+      transparent 70%
+    );
+
+  transform: rotate(15deg);
+}
+
+/* STARS */
+
+.rivendell-star {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8);
+
+  z-index: 2;
+}
+
+/* Star positions */
+
+.star-r1 {
+  top: 12%;
+  left: 10%;
+}
+
+.star-r2 {
+  top: 20%;
+  left: 22%;
+}
+
+.star-r3 {
+  top: 8%;
+  left: 35%;
+}
+
+.star-r4 {
+  top: 28%;
+  left: 43%;
+}
+
+.star-r5 {
+  top: 14%;
+  left: 55%;
+}
+
+.star-r6 {
+  top: 7%;
+  left: 70%;
+}
+
+.star-r7 {
+  top: 25%;
+  left: 78%;
+}
+
+.star-r8 {
+  top: 18%;
+  left: 90%;
+}
+
+.star-r9 {
+  top: 35%;
+  left: 15%;
+}
+
+.star-r10 {
+  top: 32%;
+  left: 65%;
+}
+
+.star-r11 {
+  top: 10%;
+  left: 82%;
+}
+
+.star-r12 {
+  top: 38%;
+  left: 52%;
+}
+
+/* MOUNTAINS */
+
+.rivendell-mountains {
+  position: absolute;
+
+  left: -10%;
+  width: 120%;
+  bottom: 25%;
+
+  display: flex;
+  align-items: flex-end;
+
+  z-index: 3;
+}
+
+.rivendell-mountains span {
+  display: block;
+
+  width: 25%;
+  height: 260px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #121d35,
+      #26385a
+    );
+
+  clip-path: polygon(
+    0 100%,
+    25% 55%,
+    40% 65%,
+    55% 30%,
+    70% 58%,
+    100% 100%
+  );
+}
+
+.rivendell-mountains-back {
+  opacity: 0.7;
+  bottom: 30%;
+}
+
+.rivendell-mountains-back span {
+  height: 330px;
+}
+
+.rivendell-mountains-front {
+  opacity: 0.95;
+  bottom: 20%;
+}
+
+.rivendell-mountains-front span {
+  height: 250px;
+}
+
+/* CITY */
+
+.rivendell-city {
+  position: absolute;
+
+  width: 500px;
+  height: 250px;
+
+  left: 50%;
+  bottom: 23%;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+}
+
+/* TOWERS */
+
+.rivendell-tower {
+  position: absolute;
+
+  bottom: 20px;
+
+  width: 70px;
+  height: 130px;
+}
+
+.tower-one {
+  left: 40px;
+}
+
+.tower-two {
+  left: 215px;
+
+  height: 180px;
+}
+
+.tower-three {
+  right: 40px;
+
+  height: 145px;
+}
+
+.tower-body {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 100%;
+  height: 75%;
+
+  border-radius: 35px 35px 5px 5px;
+
+  background:
+    linear-gradient(
+      to right,
+      #536c7b,
+      #8ba6aa,
+      #405866
+    );
+
+  box-shadow:
+    0 0 20px rgba(150, 220, 220, 0.2);
+}
+
+.tower-roof {
+  position: absolute;
+
+  top: 0;
+  left: -15px;
+
+  width: 100px;
+  height: 60px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #29495a,
+      #6c9a9b
+    );
+
+  clip-path: polygon(
+    50% 0,
+    100% 100%,
+    0 100%
+  );
+
+  z-index: 2;
+}
+
+.tower-window {
+  position: absolute;
+
+  width: 10px;
+  height: 28px;
+
+  left: 30px;
+  bottom: 45px;
+
+  border-radius: 10px;
+
+  background: #ccefff;
+
+  box-shadow:
+    0 0 15px rgba(170, 230, 255, 0.9);
+
+  z-index: 3;
+}
+
+/* BRIDGE */
+
+.rivendell-bridge {
+  position: absolute;
+
+  left: 80px;
+  right: 80px;
+
+  bottom: 35px;
+
+  height: 25px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #78989a,
+      #3d5962
+    );
+
+  box-shadow:
+    0 0 15px rgba(150, 220, 220, 0.2);
+}
+
+/* WATERFALLS */
+
+.waterfall {
+  position: absolute;
+
+  bottom: 20%;
+
+  width: 35px;
+  height: 190px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(200, 245, 255, 0.8),
+      rgba(90, 180, 220, 0.25),
+      transparent
+    );
+
+  filter: blur(2px);
+
+  z-index: 4;
+}
+
+.waterfall-one {
+  left: 27%;
+}
+
+.waterfall-two {
+  left: 70%;
+  height: 230px;
+}
+
+.waterfall-three {
+  left: 43%;
+  height: 140px;
+}
+
+/* RIVER */
+
+.rivendell-river {
+  position: absolute;
+
+  left: -10%;
+  bottom: -15%;
+
+  width: 120%;
+  height: 260px;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(100, 210, 220, 0.35),
+      transparent 65%
+    );
+
+  border-radius: 50%;
+
+  filter: blur(8px);
+
+  z-index: 4;
+}
+
+/* FIREFLIES */
+
+.rivendell-firefly {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #bdf7ff;
+
+  box-shadow:
+    0 0 12px #9ceeff;
+
+  z-index: 7;
+}
+
+.firefly-r1 {
+  left: 25%;
+  bottom: 30%;
+}
+
+.firefly-r2 {
+  left: 35%;
+  bottom: 42%;
+}
+
+.firefly-r3 {
+  left: 60%;
+  bottom: 34%;
+}
+
+.firefly-r4 {
+  left: 75%;
+  bottom: 40%;
+}
+
+.firefly-r5 {
+  left: 48%;
+  bottom: 28%;
+}
+
+/* CONTENT */
+
+.rivendell-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: min(700px, 90%);
+
+  text-align: center;
+
+  z-index: 10;
+}
+
+.rivendell-eyebrow {
+  margin-bottom: 15px;
+
+  font-size: 0.75rem;
+  letter-spacing: 6px;
+
+  color: #b9e7e5;
+}
+
+.rivendell-title {
+  margin: 0;
+
+  font-size: clamp(4rem, 10vw, 8rem);
+
+  letter-spacing: 12px;
+
+  font-weight: 500;
+
+  color: #e5ffff;
+
+  text-shadow:
+    0 0 20px rgba(150, 230, 230, 0.4),
+    0 0 60px rgba(100, 180, 220, 0.3);
+}
+
+.rivendell-text {
+  max-width: 560px;
+
+  margin: 25px auto 35px;
+
+  line-height: 1.8;
+
+  color: rgba(230, 250, 255, 0.8);
+
+  font-size: 1rem;
+}
+
+.rivendell-button {
+  padding: 14px 32px;
+
+  border: 1px solid rgba(190, 240, 240, 0.6);
+
+  background: rgba(10, 30, 40, 0.45);
+
+  color: #e5ffff;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.rivendell-button:hover {
+  background: rgba(120, 200, 210, 0.2);
+
+  box-shadow:
+    0 0 25px rgba(150, 230, 240, 0.3);
+
+  transform: translateY(-3px);
+}

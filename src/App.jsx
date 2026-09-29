@@ -8,11 +8,25 @@ function App() {
 
   return (
     <div className="app">
+
       {currentScene === "hero" && (
-        <Hero onEnter={() => setCurrentScene("shire")} />
+        <Hero
+          onEnter={() => setCurrentScene("shire")}
+        />
       )}
 
-      {currentScene === "shire" && <Shire />}
+      {currentScene === "shire" && (
+        <Shire
+          onContinue={() => setCurrentScene("rivendell")}
+        />
+      )}
+
+      {currentScene === "rivendell" && (
+        <div className="coming-soon">
+          RIVENDELL
+        </div>
+      )}
+
     </div>
   );
 }

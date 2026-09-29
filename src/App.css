@@ -471,3 +471,264 @@ body {
 
   opacity: 0.5;
 }
+/* =========================
+   THE SHIRE
+========================= */
+
+.shire {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #18252a 0%,
+      #304d43 45%,
+      #14251d 100%
+    );
+
+  color: #eee6ce;
+}
+
+/* Sky */
+
+.shire-sky {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 70% 25%,
+      rgba(240, 226, 173, 0.18),
+      transparent 20%
+    );
+
+  pointer-events: none;
+}
+
+/* Moon */
+
+.shire-moon {
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  top: 13%;
+  right: 16%;
+
+  border-radius: 50%;
+
+  background: #e7dfc4;
+
+  box-shadow:
+    0 0 35px rgba(231, 223, 196, 0.3),
+    0 0 90px rgba(231, 223, 196, 0.15);
+
+  opacity: 0.9;
+}
+
+/* Hills */
+
+.shire-hills {
+  position: absolute;
+
+  left: -10%;
+  width: 120%;
+
+  border-radius: 50% 50% 0 0;
+}
+
+.shire-hills-back {
+  bottom: 15%;
+
+  height: 40%;
+
+  background: #304b3b;
+
+  transform: rotate(-2deg);
+}
+
+.shire-hills-front {
+  bottom: -12%;
+
+  height: 43%;
+
+  background: #14251d;
+
+  transform: rotate(2deg);
+}
+
+/* Small cabin */
+
+.shire-cabin {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 21%;
+  left: 16%;
+
+  width: 150px;
+  height: 100px;
+}
+
+/* Cabin body */
+
+.cabin-body {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 150px;
+  height: 75px;
+
+  background: #382d20;
+
+  border-radius: 8px 8px 3px 3px;
+}
+
+/* Roof */
+
+.cabin-roof {
+  position: absolute;
+
+  top: 0;
+  left: -15px;
+
+  width: 180px;
+  height: 65px;
+
+  background: #20251e;
+
+  clip-path: polygon(
+    50% 0%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+/* Door */
+
+.cabin-door {
+  position: absolute;
+
+  z-index: 3;
+
+  bottom: 0;
+  left: 62px;
+
+  width: 30px;
+  height: 50px;
+
+  background: #171510;
+
+  border-radius: 15px 15px 0 0;
+}
+
+/* Window */
+
+.cabin-window {
+  position: absolute;
+
+  z-index: 3;
+
+  bottom: 35px;
+  right: 20px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: #d9b65c;
+
+  box-shadow:
+    0 0 15px rgba(217, 182, 92, 0.6);
+}
+
+/* Content */
+
+.shire-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(700px, 90%);
+
+  text-align: center;
+}
+
+.shire-eyebrow {
+  font-size: 0.8rem;
+
+  letter-spacing: 0.4rem;
+
+  color: #c9b67c;
+
+  margin-bottom: 25px;
+}
+
+.shire-title {
+  font-size: clamp(4rem, 10vw, 8rem);
+
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+
+  line-height: 0.9;
+
+  color: #e8dfc5;
+
+  text-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.shire-text {
+  max-width: 600px;
+
+  margin: 35px auto 40px;
+
+  color: #d0d0c4;
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+}
+
+.shire-button {
+  padding: 15px 35px;
+
+  border: 1px solid rgba(211, 191, 133, 0.7);
+
+  background: rgba(0, 0, 0, 0.2);
+
+  color: #e4d5ac;
+
+  font-family: inherit;
+
+  letter-spacing: 0.2rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.shire-button:hover {
+  background: #c9b477;
+
+  color: #111;
+
+  transform: translateY(-3px);
+}

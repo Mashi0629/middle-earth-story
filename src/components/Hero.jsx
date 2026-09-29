@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Landscape from "./Landscape";
 
-function Hero() {
+function Hero({ onEnter }) {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const buttonRef = useRef(null);
@@ -217,7 +217,7 @@ timeline
           forgotten legends, and a journey yet to begin.
         </p>
 
-        <button ref={buttonRef} className="enter-button">
+        <button ref={buttonRef} className="enter-button" onClick={onEnter}>
           ENTER THE JOURNEY
         </button>
       </div>

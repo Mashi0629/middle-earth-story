@@ -732,3 +732,198 @@ body {
 
   transform: translateY(-3px);
 }
+/* =========================
+   SHIRE ATMOSPHERE
+========================= */
+
+.shire-stars {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.5) 1px,
+      transparent 1px
+    );
+
+  background-size: 170px 170px;
+
+  opacity: 0.25;
+
+  pointer-events: none;
+}
+
+/* =========================
+   TREES
+========================= */
+
+.tree {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 18%;
+}
+
+.tree-trunk {
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  width: 18px;
+  height: 100px;
+
+  transform: translateX(-50%);
+
+  background: #30261c;
+
+  border-radius: 10px;
+}
+
+.tree-leaves {
+  width: 130px;
+  height: 150px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #3c6242 0 30%,
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 30% 45%,
+      #294a32 0 35%,
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 70% 50%,
+      #31573a 0 35%,
+      transparent 36%
+    );
+
+  border-radius: 50%;
+}
+
+.tree-one {
+  left: 5%;
+
+  transform: scale(0.9);
+}
+
+.tree-two {
+  right: 7%;
+
+  transform: scale(1.2);
+}
+
+.tree-three {
+  right: 25%;
+  bottom: 22%;
+
+  transform: scale(0.65);
+}
+
+/* =========================
+   GRASS
+========================= */
+
+.grass-field {
+  position: absolute;
+
+  z-index: 4;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 25%;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-around;
+
+  pointer-events: none;
+}
+
+.grass {
+  display: block;
+
+  width: 3px;
+  height: 45px;
+
+  background: #4b6840;
+
+  transform-origin: bottom center;
+}
+
+/* =========================
+   FIREFLIES
+========================= */
+
+.firefly {
+  position: absolute;
+
+  z-index: 6;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #e4d58d;
+
+  box-shadow:
+    0 0 8px #e4d58d,
+    0 0 20px rgba(228, 213, 141, 0.5);
+}
+
+.firefly-one {
+  left: 18%;
+  top: 40%;
+}
+
+.firefly-two {
+  left: 35%;
+  top: 30%;
+}
+
+.firefly-three {
+  left: 55%;
+  top: 45%;
+}
+
+.firefly-four {
+  left: 70%;
+  top: 32%;
+}
+
+.firefly-five {
+  left: 82%;
+  top: 52%;
+}
+
+.firefly-six {
+  left: 45%;
+  top: 60%;
+}
+
+/* =========================
+   CHIMNEY
+========================= */
+
+.cabin-chimney {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 20px;
+  height: 45px;
+
+  right: 25px;
+  top: 15px;
+
+  background: #302820;
+}

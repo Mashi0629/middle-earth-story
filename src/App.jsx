@@ -11,24 +11,31 @@ function App() {
   return (
     <div className="app">
 
+      {/* HERO */}
       {currentScene === "hero" && (
         <Hero
           onEnter={() => setCurrentScene("shire")}
         />
       )}
 
+      {/* SHIRE */}
       {currentScene === "shire" && (
         <Shire
           onContinue={() => setCurrentScene("rivendell")}
         />
       )}
 
+      {/* RIVENDELL */}
       {currentScene === "rivendell" && (
-        <Rivendell />
+        <Rivendell
+          onContinue={() => setCurrentScene("mountains")}
+        />
       )}
+
+      {/* MISTY MOUNTAINS */}
       {currentScene === "mountains" && (
         <MistyMountains />
-     )}
+      )}
 
     </div>
   );

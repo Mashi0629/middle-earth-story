@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-function Rivendell() {
+function Rivendell({ onContinue }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -246,8 +246,11 @@ function Rivendell() {
           older than memory.
         </p>
 
-        <button className="rivendell-button">
-          ENTER THE VALLEY
+        <button
+         className="rivendell-button"
+         onClick={onContinue}
+        >
+          CONTINUE THE JOURNEY
         </button>
 
       </div>

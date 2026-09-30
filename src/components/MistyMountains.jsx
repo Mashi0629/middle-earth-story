@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-function MistyMountains() {
+function MistyMountains({ onContinue }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -152,7 +152,7 @@ function MistyMountains() {
           paths swallowed by mist.
         </p>
 
-        <button className="mountain-button">
+        <button className="mountain-button" onClick={onContinue}>
           CROSS THE MOUNTAINS
         </button>
       </div>

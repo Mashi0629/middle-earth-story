@@ -1,8 +1,12 @@
+
 import { useState } from "react";
+
 import Hero from "./components/Hero";
 import Shire from "./components/Shire";
 import Rivendell from "./components/Rivendell";
 import MistyMountains from "./components/MistyMountains";
+import Moria from "./components/Moria";
+
 import "./App.css";
 
 function App() {
@@ -10,33 +14,25 @@ function App() {
 
   return (
     <div className="app">
-
-      {/* HERO */}
       {currentScene === "hero" && (
-        <Hero
-          onEnter={() => setCurrentScene("shire")}
-        />
+        <Hero onEnter={() => setCurrentScene("shire")} />
       )}
 
-      {/* SHIRE */}
       {currentScene === "shire" && (
-        <Shire
-          onContinue={() => setCurrentScene("rivendell")}
-        />
+        <Shire onContinue={() => setCurrentScene("rivendell")} />
       )}
 
-      {/* RIVENDELL */}
       {currentScene === "rivendell" && (
-        <Rivendell
-          onContinue={() => setCurrentScene("mountains")}
+        <Rivendell onContinue={() => setCurrentScene("mountains")} />
+      )}
+
+      {currentScene === "mountains" && (
+        <MistyMountains
+          onContinue={() => setCurrentScene("moria")}
         />
       )}
 
-      {/* MISTY MOUNTAINS */}
-      {currentScene === "mountains" && (
-        <MistyMountains />
-      )}
-
+      {currentScene === "moria" && <Moria />}
     </div>
   );
 }

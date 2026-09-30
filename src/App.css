@@ -2055,3 +2055,287 @@ body {
 
   transform: translateY(-3px);
 }
+/* =========================================
+   MISTY MOUNTAINS
+========================================= */
+
+.misty-mountains {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #10131c 0%,
+      #202b38 45%,
+      #46525a 72%,
+      #111a1e 100%
+    );
+
+  color: white;
+}
+
+/* SKY */
+
+.mountain-sky {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(190, 210, 225, 0.15),
+      transparent 40%
+    );
+}
+
+/* MOON */
+
+.mountain-moon {
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  top: 14%;
+  right: 18%;
+
+  border-radius: 50%;
+
+  background: #e5edf2;
+
+  box-shadow:
+    0 0 30px rgba(220, 235, 245, 0.6),
+    0 0 70px rgba(190, 220, 235, 0.3);
+
+  z-index: 2;
+}
+
+/* MOUNTAINS */
+
+.mist-mountain {
+  position: absolute;
+
+  left: -10%;
+  width: 120%;
+
+  display: flex;
+  align-items: flex-end;
+
+  z-index: 3;
+}
+
+.mist-mountain span {
+  display: block;
+
+  width: 30%;
+  height: 350px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #18212a,
+      #34414a
+    );
+
+  clip-path: polygon(
+    0 100%,
+    25% 50%,
+    40% 62%,
+    55% 20%,
+    70% 58%,
+    100% 100%
+  );
+}
+
+.mist-mountain-back {
+  bottom: 30%;
+  opacity: 0.7;
+}
+
+.mist-mountain-back span {
+  height: 400px;
+}
+
+.mist-mountain-front {
+  bottom: 15%;
+  opacity: 0.95;
+}
+
+.mist-mountain-front span {
+  height: 320px;
+}
+
+/* SNOW */
+
+.snow-particle {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  opacity: 0.7;
+
+  box-shadow:
+    0 0 8px rgba(255,255,255,0.8);
+
+  z-index: 6;
+}
+
+.snow-one {
+  left: 12%;
+  top: 10%;
+}
+
+.snow-two {
+  left: 25%;
+  top: 25%;
+}
+
+.snow-three {
+  left: 38%;
+  top: 8%;
+}
+
+.snow-four {
+  left: 50%;
+  top: 20%;
+}
+
+.snow-five {
+  left: 64%;
+  top: 12%;
+}
+
+.snow-six {
+  left: 76%;
+  top: 30%;
+}
+
+.snow-seven {
+  left: 87%;
+  top: 15%;
+}
+
+.snow-eight {
+  left: 45%;
+  top: 35%;
+}
+
+/* MIST */
+
+.mountain-mist {
+  position: absolute;
+
+  width: 70%;
+  height: 150px;
+
+  border-radius: 50%;
+
+  filter: blur(35px);
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(210, 225, 230, 0.3),
+      transparent 70%
+    );
+
+  z-index: 5;
+}
+
+.mist-layer-one {
+  left: -15%;
+  bottom: 27%;
+}
+
+.mist-layer-two {
+  right: -20%;
+  bottom: 20%;
+}
+
+/* CONTENT */
+
+.mountain-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: min(700px, 90%);
+
+  text-align: center;
+
+  z-index: 10;
+}
+
+.mountain-eyebrow {
+  margin-bottom: 15px;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 6px;
+
+  color: #c8d5d9;
+}
+
+.mountain-title {
+  margin: 0;
+
+  font-size: clamp(3.5rem, 9vw, 7rem);
+
+  letter-spacing: 8px;
+
+  font-weight: 500;
+
+  color: #edf4f5;
+
+  text-shadow:
+    0 0 20px rgba(220,235,240,0.3),
+    0 0 60px rgba(180,210,220,0.2);
+}
+
+.mountain-text {
+  max-width: 560px;
+
+  margin: 25px auto 35px;
+
+  line-height: 1.8;
+
+  color: rgba(235,245,248,0.75);
+}
+
+.mountain-button {
+  padding: 14px 32px;
+
+  border: 1px solid rgba(220,235,240,0.6);
+
+  background: rgba(15,25,30,0.45);
+
+  color: white;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  transition:
+    0.3s ease;
+}
+
+.mountain-button:hover {
+  background: rgba(190,215,225,0.15);
+
+  box-shadow:
+    0 0 25px rgba(200,225,235,0.25);
+
+  transform: translateY(-3px);
+}

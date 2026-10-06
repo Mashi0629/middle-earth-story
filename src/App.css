@@ -3745,3 +3745,517 @@ body {
   box-shadow: 0 0 25px rgba(220, 195, 100, 0.25);
   transform: translateY(-3px);
 }
+
+/* =========================================================
+   PELENNOR FIELDS
+========================================================= */
+
+.pelennor {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+  background: #120b0a;
+  color: #f4ead7;
+}
+
+/* ---------- SKY ---------- */
+
+.pelennor-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 70% 25%,
+      rgba(145, 92, 58, 0.3),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #090b12 0%,
+      #17141a 38%,
+      #38231f 70%,
+      #120b0a 100%
+    );
+}
+
+/* ---------- MOON ---------- */
+
+.pelennor-moon {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 12%;
+  right: 16%;
+  border-radius: 50%;
+
+  background: #e7dcc5;
+
+  box-shadow:
+    0 0 30px rgba(231, 220, 197, 0.35),
+    0 0 80px rgba(231, 220, 197, 0.15);
+
+  opacity: 0.8;
+}
+
+/* ---------- CLOUDS ---------- */
+
+.pelennor-clouds {
+  position: absolute;
+  width: 140%;
+  height: 40%;
+  left: -20%;
+  top: 12%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(35, 31, 34, 0.75),
+      transparent 65%
+    );
+
+  filter: blur(18px);
+  opacity: 0.8;
+}
+
+/* ---------- MOUNTAINS ---------- */
+
+.pelennor-mountains {
+  position: absolute;
+  width: 120%;
+  height: 42%;
+  left: -10%;
+  bottom: 28%;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.pelennor-mountains span {
+  display: block;
+  width: 28%;
+  height: 100%;
+
+  background: #17151a;
+
+  clip-path: polygon(
+    0 100%,
+    25% 55%,
+    42% 70%,
+    62% 30%,
+    78% 62%,
+    100% 100%
+  );
+
+  opacity: 0.9;
+}
+
+.pelennor-mountains span:nth-child(2) {
+  height: 85%;
+  margin-left: -5%;
+}
+
+.pelennor-mountains span:nth-child(3) {
+  height: 95%;
+  margin-left: -8%;
+}
+
+.pelennor-mountains span:nth-child(4) {
+  height: 75%;
+  margin-left: -6%;
+}
+
+/* ---------- CITY ---------- */
+
+.battle-city {
+  position: absolute;
+  left: 50%;
+  bottom: 29%;
+  width: 330px;
+  height: 260px;
+  transform: translateX(-50%);
+}
+
+/* Main wall */
+
+.battle-wall {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 120px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #77716c,
+      #b4aea5 50%,
+      #77716c
+    );
+
+  clip-path: polygon(
+    0 100%,
+    8% 45%,
+    18% 55%,
+    28% 30%,
+    38% 48%,
+    50% 20%,
+    62% 48%,
+    72% 32%,
+    82% 55%,
+    92% 40%,
+    100% 100%
+  );
+
+  opacity: 0.7;
+}
+
+/* Tower */
+
+.battle-tower {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+
+  width: 70px;
+  height: 180px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #77716c,
+      #c4beb5 50%,
+      #77716c
+    );
+
+  clip-path: polygon(
+    15% 100%,
+    15% 18%,
+    35% 18%,
+    50% 0,
+    65% 18%,
+    85% 18%,
+    85% 100%
+  );
+}
+
+/* Tower light */
+
+.battle-tower::after {
+  content: "";
+
+  position: absolute;
+
+  width: 10px;
+  height: 22px;
+
+  left: 50%;
+  top: 35%;
+
+  transform: translateX(-50%);
+
+  background: #f2d28b;
+
+  box-shadow:
+    0 0 15px #f2d28b,
+    0 0 35px rgba(242, 210, 139, 0.5);
+}
+
+/* Gate */
+
+.battle-gate {
+  position: absolute;
+
+  width: 45px;
+  height: 65px;
+
+  bottom: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: #181519;
+
+  border-radius: 50% 50% 0 0;
+}
+
+/* ---------- GROUND ---------- */
+
+.battle-ground {
+  position: absolute;
+  left: -10%;
+  bottom: -10%;
+  width: 120%;
+  height: 45%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #32201c 0%,
+      #1a100e 65%,
+      #090706 100%
+    );
+
+  clip-path: polygon(
+    0 35%,
+    15% 25%,
+    32% 35%,
+    48% 18%,
+    65% 30%,
+    82% 20%,
+    100% 32%,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* ---------- FIRE ---------- */
+
+.battle-fire {
+  position: absolute;
+
+  width: 10px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #e58b45;
+
+  box-shadow:
+    0 0 10px #e58b45,
+    0 0 25px rgba(229, 139, 69, 0.7);
+}
+
+.fire-one {
+  left: 18%;
+  bottom: 27%;
+}
+
+.fire-two {
+  left: 32%;
+  bottom: 23%;
+}
+
+.fire-three {
+  right: 30%;
+  bottom: 25%;
+}
+
+.fire-four {
+  right: 17%;
+  bottom: 29%;
+}
+
+/* ---------- SMOKE ---------- */
+
+.battle-smoke {
+  position: absolute;
+
+  width: 300px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(30, 27, 28, 0.65),
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  opacity: 0.7;
+}
+
+.battle-smoke-one {
+  left: 5%;
+  bottom: 28%;
+}
+
+.battle-smoke-two {
+  right: 5%;
+  bottom: 30%;
+}
+
+/* ---------- EMBERS ---------- */
+
+.battle-ember {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #e39a58;
+
+  box-shadow:
+    0 0 8px #e39a58,
+    0 0 15px rgba(227, 154, 88, 0.6);
+}
+
+.ember-one {
+  left: 12%;
+  bottom: 30%;
+}
+
+.ember-two {
+  left: 23%;
+  bottom: 40%;
+}
+
+.ember-three {
+  left: 37%;
+  bottom: 25%;
+}
+
+.ember-four {
+  left: 47%;
+  bottom: 34%;
+}
+
+.ember-five {
+  left: 58%;
+  bottom: 27%;
+}
+
+.ember-six {
+  left: 67%;
+  bottom: 38%;
+}
+
+.ember-seven {
+  left: 76%;
+  bottom: 30%;
+}
+
+.ember-eight {
+  left: 84%;
+  bottom: 42%;
+}
+
+.ember-nine {
+  left: 91%;
+  bottom: 25%;
+}
+
+.ember-ten {
+  left: 52%;
+  bottom: 45%;
+}
+
+/* ---------- CONTENT ---------- */
+
+.pelennor-content {
+  position: absolute;
+
+  z-index: 20;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(700px, 90%);
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.pelennor-eyebrow {
+  margin-bottom: 18px;
+
+  font-size: 13px;
+  letter-spacing: 5px;
+
+  color: #d49b63;
+}
+
+.pelennor-title {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 7vw, 92px);
+
+  letter-spacing: 8px;
+
+  line-height: 1;
+
+  text-shadow:
+    0 3px 20px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(196, 140, 91, 0.2);
+}
+
+.pelennor-text {
+  max-width: 600px;
+
+  margin: 30px auto;
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  color: rgba(244, 234, 215, 0.78);
+}
+
+/* ---------- BUTTON ---------- */
+
+.pelennor-button {
+  padding: 15px 34px;
+
+  border: 1px solid rgba(214, 169, 116, 0.6);
+
+  background: rgba(20, 13, 12, 0.65);
+
+  color: #f4ead7;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pelennor-button:hover {
+  background: rgba(128, 69, 40, 0.6);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(205, 126, 66, 0.2);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+  .pelennor-title {
+    letter-spacing: 4px;
+  }
+
+  .pelennor-text {
+    font-size: 15px;
+  }
+
+  .battle-city {
+    transform: translateX(-50%) scale(0.75);
+  }
+
+  .pelennor-moon {
+    width: 80px;
+    height: 80px;
+    right: 10%;
+  }
+}

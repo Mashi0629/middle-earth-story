@@ -193,4 +193,4 @@ function PelennorFields({ onContinue }) {
   );
 }
 
-export default Pelennor;
+export default PelennorFields;

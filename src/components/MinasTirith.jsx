@@ -195,7 +195,7 @@ function MinasTirith({ onContinue }) {
           className="minas-button"
           onClick={onContinue}
         >
-               RIDE TO THE BATTLE
+          RIDE TO THE BATTLE
         </button>
       </div>
     </section>

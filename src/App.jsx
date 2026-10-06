@@ -7,6 +7,7 @@ import MistyMountains from "./components/MistyMountains";
 import Moria from "./components/Moria";
 import Lothlorien from "./components/Lothlorien";
 import MinasTirith from "./components/MinasTirith";
+import PelennorFields from "./components/PelennorFields";
 
 import "./App.css";
 
@@ -53,7 +54,12 @@ function App() {
       )}
 
       {currentScene === "minas" && (
-        <MinasTirith />
+       <MinasTirith
+       onContinue={() => setCurrentScene("pelennor")}
+       />
+      )}
+      {currentScene === "pelennor" && (
+        <PelennorFields />
       )}
 
     </div>

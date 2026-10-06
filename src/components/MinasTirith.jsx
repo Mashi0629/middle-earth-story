@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-function MinasTirith() {
+function MinasTirith({ onContinue }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -191,8 +191,11 @@ function MinasTirith() {
           hope still burns against the coming darkness.
         </p>
 
-        <button className="minas-button">
-          RIDE TO GONDOR
+        <button
+          className="minas-button"
+          onClick={onContinue}
+        >
+               RIDE TO THE BATTLE
         </button>
       </div>
     </section>

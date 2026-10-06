@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-function Lothlorien() {
+function Lothlorien({ onContinue }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -182,7 +182,12 @@ function Lothlorien() {
           beneath ancient trees and the light of the
           Elves still shines.
         </p>
+
+        <button className="lothlorien-button" onClick={onContinue}>
+         RIDE TO GONDOR
+        </button>
       </div>
+
     </section>
   );
 }

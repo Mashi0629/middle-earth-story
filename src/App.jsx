@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 import Hero from "./components/Hero";
@@ -7,6 +6,7 @@ import Rivendell from "./components/Rivendell";
 import MistyMountains from "./components/MistyMountains";
 import Moria from "./components/Moria";
 import Lothlorien from "./components/Lothlorien";
+import MinasTirith from "./components/MinasTirith";
 
 import "./App.css";
 
@@ -15,16 +15,23 @@ function App() {
 
   return (
     <div className="app">
+
       {currentScene === "hero" && (
-        <Hero onEnter={() => setCurrentScene("shire")} />
+        <Hero
+          onEnter={() => setCurrentScene("shire")}
+        />
       )}
 
       {currentScene === "shire" && (
-        <Shire onContinue={() => setCurrentScene("rivendell")} />
+        <Shire
+          onContinue={() => setCurrentScene("rivendell")}
+        />
       )}
 
       {currentScene === "rivendell" && (
-        <Rivendell onContinue={() => setCurrentScene("mountains")} />
+        <Rivendell
+          onContinue={() => setCurrentScene("mountains")}
+        />
       )}
 
       {currentScene === "mountains" && (
@@ -34,14 +41,21 @@ function App() {
       )}
 
       {currentScene === "moria" && (
-  <Moria
-    onContinue={() => setCurrentScene("lothlorien")}
-  />
-)}
+        <Moria
+          onContinue={() => setCurrentScene("lothlorien")}
+        />
+      )}
 
-     {currentScene === "lothlorien" && (
-      <Lothlorien />
-     )}
+      {currentScene === "lothlorien" && (
+        <Lothlorien
+          onContinue={() => setCurrentScene("minas")}
+        />
+      )}
+
+      {currentScene === "minas" && (
+        <MinasTirith />
+      )}
+
     </div>
   );
 }

@@ -3168,3 +3168,31 @@ body {
     width: 30px;
   }
 }
+
+.moria-button {
+  margin-top: 30px;
+  padding: 14px 32px;
+
+  border: 1px solid rgba(120, 207, 198, 0.6);
+  border-radius: 2px;
+
+  background: rgba(10, 30, 35, 0.55);
+
+  color: #d9eee9;
+
+  font-size: 11px;
+  letter-spacing: 4px;
+
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+}
+
+.moria-button:hover {
+  background: rgba(91, 180, 171, 0.15);
+
+  box-shadow:
+    0 0 25px rgba(88, 214, 203, 0.25);
+
+  transform: translateY(-3px);
+}

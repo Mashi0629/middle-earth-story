@@ -6,6 +6,7 @@ import Shire from "./components/Shire";
 import Rivendell from "./components/Rivendell";
 import MistyMountains from "./components/MistyMountains";
 import Moria from "./components/Moria";
+import Lothlorien from "./components/Lothlorien";
 
 import "./App.css";
 
@@ -32,7 +33,15 @@ function App() {
         />
       )}
 
-      {currentScene === "moria" && <Moria />}
+      {currentScene === "moria" && (
+  <Moria
+    onContinue={() => setCurrentScene("lothlorien")}
+  />
+)}
+
+     {currentScene === "lothlorien" && (
+      <Lothlorien />
+     )}
     </div>
   );
 }

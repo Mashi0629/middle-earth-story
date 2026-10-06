@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-function Moria() {
+function Moria({ onContinue }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -161,6 +161,9 @@ function Moria() {
         <p className="moria-quote">
           "The world is indeed full of peril."
         </p>
+        <button className="moria-button" onClick={onContinue}>
+          ENTER THE GOLDEN WOOD
+        </button>
       </div>
     </section>
   );

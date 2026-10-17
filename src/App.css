@@ -4259,3 +4259,537 @@ body {
     right: 10%;
   }
 }
+
+
+/* =========================================================
+   THE RETURN OF THE KING — FINAL SCENE
+========================================================= */
+
+.return-king {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #171b25;
+  color: #fff3d8;
+}
+
+/* SUNRISE SKY */
+
+.king-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 70% 43%,
+      rgba(255, 220, 151, 0.65),
+      transparent 22%
+    ),
+    linear-gradient(
+      180deg,
+      #29354b 0%,
+      #697b91 30%,
+      #d4a47e 57%,
+      #f2c78d 72%,
+      #765345 100%
+    );
+}
+
+/* GOLDEN SUN */
+
+.king-sun {
+  position: absolute;
+  width: clamp(100px, 15vw, 190px);
+  aspect-ratio: 1;
+  right: 17%;
+  top: 25%;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff8d8 0%,
+      #ffe5a5 45%,
+      #efb96f 72%,
+      rgba(239, 185, 111, 0) 100%
+    );
+
+  box-shadow:
+    0 0 50px rgba(255, 220, 151, 0.5),
+    0 0 130px rgba(255, 190, 115, 0.35);
+
+  opacity: 0.8;
+}
+
+/* SOFT CLOUDS */
+
+.king-clouds {
+  position: absolute;
+  top: 12%;
+  left: -15%;
+  width: 130%;
+  height: 45%;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(245, 214, 186, 0.3),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 65% 45%,
+      rgba(255, 226, 190, 0.24),
+      transparent 40%
+    );
+
+  filter: blur(22px);
+  opacity: 0.8;
+}
+
+/* DISTANT MOUNTAINS */
+
+.king-mountains {
+  position: absolute;
+  bottom: 25%;
+  left: -8%;
+  width: 116%;
+  height: 42%;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.king-mountains span {
+  display: block;
+  flex: 1;
+  height: 75%;
+
+  background: linear-gradient(
+    180deg,
+    #626879,
+    #333b4b 80%
+  );
+
+  clip-path: polygon(
+    0 100%,
+    25% 45%,
+    42% 60%,
+    65% 15%,
+    82% 55%,
+    100% 100%
+  );
+
+  opacity: 0.8;
+}
+
+.king-mountains span:nth-child(2) {
+  height: 90%;
+  margin-left: -5%;
+}
+
+.king-mountains span:nth-child(3) {
+  height: 100%;
+  margin-left: -8%;
+}
+
+.king-mountains span:nth-child(4) {
+  height: 82%;
+  margin-left: -7%;
+}
+
+.king-mountains span:nth-child(5) {
+  height: 95%;
+  margin-left: -6%;
+}
+
+/* MINAS TIRITH SILHOUETTE */
+
+.king-city {
+  position: absolute;
+  left: 50%;
+  bottom: 25%;
+  width: min(480px, 75vw);
+  height: 300px;
+
+  transform: translateX(-50%);
+}
+
+/* CITY WALL */
+
+.king-wall {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 145px;
+
+  background: linear-gradient(
+    90deg,
+    #666d7b,
+    #c1b8a9 48%,
+    #8d8b91
+  );
+
+  clip-path: polygon(
+    0 100%,
+    0 65%,
+    10% 65%,
+    10% 52%,
+    18% 52%,
+    18% 40%,
+    28% 40%,
+    28% 30%,
+    38% 30%,
+    38% 20%,
+    50% 20%,
+    62% 30%,
+    72% 30%,
+    72% 42%,
+    82% 42%,
+    82% 55%,
+    92% 55%,
+    92% 68%,
+    100% 68%,
+    100% 100%
+  );
+
+  box-shadow: 0 -15px 45px rgba(255, 223, 171, 0.12);
+}
+
+/* WHITE TOWER */
+
+.king-tower {
+  position: absolute;
+  bottom: 85px;
+  left: 50%;
+
+  width: 66px;
+  height: 210px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    #8b8e99,
+    #f1e5cf 48%,
+    #a7a4a5
+  );
+
+  clip-path: polygon(
+    10% 100%,
+    10% 20%,
+    30% 20%,
+    50% 0,
+    70% 20%,
+    90% 20%,
+    90% 100%
+  );
+
+  filter: drop-shadow(
+    0 0 20px rgba(255, 223, 171, 0.2)
+  );
+}
+
+/* TOWER WINDOW */
+
+.king-tower::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 34%;
+
+  width: 9px;
+  height: 25px;
+
+  transform: translateX(-50%);
+
+  background: #ffe5a2;
+
+  box-shadow: 0 0 18px #ffe5a2;
+}
+
+/* CITY GATE */
+
+.king-gate {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  width: 45px;
+  height: 65px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50% 50% 0 0;
+  background: #292c39;
+}
+
+/* FOREGROUND GROUND */
+
+.king-ground {
+  position: absolute;
+  left: -10%;
+  bottom: -1%;
+  width: 120%;
+  height: 30%;
+
+  background: linear-gradient(
+    180deg,
+    #745746,
+    #302a2a 85%
+  );
+
+  clip-path: polygon(
+    0 25%,
+    20% 12%,
+    42% 30%,
+    60% 15%,
+    80% 28%,
+    100% 10%,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* GOLDEN FLOATING PARTICLES */
+
+.king-particle {
+  position: absolute;
+  z-index: 3;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: #ffe3a1;
+
+  box-shadow:
+    0 0 8px rgba(255, 227, 161, 0.9),
+    0 0 18px rgba(255, 199, 111, 0.5);
+}
+
+.particle-k1 {
+  left: 9%;
+  bottom: 30%;
+}
+
+.particle-k2 {
+  left: 17%;
+  bottom: 43%;
+}
+
+.particle-k3 {
+  left: 27%;
+  bottom: 35%;
+}
+
+.particle-k4 {
+  left: 36%;
+  bottom: 48%;
+}
+
+.particle-k5 {
+  left: 44%;
+  bottom: 29%;
+}
+
+.particle-k6 {
+  left: 55%;
+  bottom: 40%;
+}
+
+.particle-k7 {
+  left: 64%;
+  bottom: 31%;
+}
+
+.particle-k8 {
+  left: 72%;
+  bottom: 46%;
+}
+
+.particle-k9 {
+  left: 80%;
+  bottom: 35%;
+}
+
+.particle-k10 {
+  left: 89%;
+  bottom: 44%;
+}
+
+.particle-k11 {
+  left: 48%;
+  bottom: 55%;
+}
+
+.particle-k12 {
+  left: 31%;
+  bottom: 55%;
+}
+
+/* CINEMATIC CONTENT */
+
+.king-content {
+  position: absolute;
+  z-index: 10;
+
+  top: 48%;
+  left: 50%;
+
+  width: min(850px, 92%);
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 25px;
+}
+
+.king-eyebrow {
+  margin-bottom: 22px;
+
+  color: #ffe0a0;
+  font-size: 12px;
+  letter-spacing: 6px;
+}
+
+.king-title {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 6.5vw, 82px);
+
+  line-height: 1.12;
+  letter-spacing: 3px;
+
+  color: #fff2d6;
+
+  text-shadow:
+    0 3px 20px rgba(28, 25, 32, 0.65),
+    0 0 40px rgba(255, 223, 171, 0.18);
+}
+
+.king-text {
+  max-width: 600px;
+
+  margin: 28px auto 22px;
+
+  font-size: 16px;
+  line-height: 1.9;
+
+  color: rgba(255, 246, 226, 0.92);
+
+  text-shadow: 0 2px 10px rgba(20, 20, 30, 0.5);
+}
+
+/* DECORATIVE DIVIDER */
+
+.king-divider {
+  width: 90px;
+  height: 1px;
+
+  margin: 25px auto;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffe1a1,
+    transparent
+  );
+}
+
+.king-quote {
+  margin: 0 0 30px;
+
+  color: #ffe3ad;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* REPLAY BUTTON */
+
+.king-button {
+  padding: 16px 30px;
+
+  border: 1px solid rgba(255, 228, 177, 0.8);
+  background: rgba(47, 39, 42, 0.35);
+
+  color: #fff2d6;
+
+  font-size: 11px;
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.king-button:hover {
+  background: rgba(255, 223, 171, 0.16);
+
+  box-shadow:
+    0 0 25px rgba(255, 223, 171, 0.22);
+
+  transform: translateY(-3px);
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .return-king * {
+    scroll-behavior: auto;
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+  .king-content {
+    top: 46%;
+    width: 96%;
+    padding: 15px;
+  }
+
+  .king-eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  .king-title {
+    font-size: clamp(34px, 9vw, 58px);
+    letter-spacing: 1px;
+  }
+
+  .king-text {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .king-quote {
+    font-size: 15px;
+  }
+
+  .king-city {
+    bottom: 24%;
+    transform: translateX(-50%) scale(0.72);
+    transform-origin: bottom center;
+  }
+
+  .king-sun {
+    top: 19%;
+    right: 10%;
+  }
+
+  .king-button {
+    padding: 14px 18px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+}

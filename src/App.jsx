@@ -8,6 +8,7 @@ import Moria from "./components/Moria";
 import Lothlorien from "./components/Lothlorien";
 import MinasTirith from "./components/MinasTirith";
 import PelennorFields from "./components/PelennorFields";
+import ReturnOfTheKing from "./components/ReturnOfTheKing"; 
 
 import "./App.css";
 
@@ -59,9 +60,15 @@ function App() {
        />
       )}
       {currentScene === "pelennor" && (
-        <PelennorFields />
-      )}
-
+  <PelennorFields
+    onContinue={() => setCurrentScene("king")}
+  />
+)}
+      {currentScene === "king" && (
+  <ReturnOfTheKing
+    onReplay={() => setCurrentScene("hero")}
+  />
+)}
     </div>
   );
 }

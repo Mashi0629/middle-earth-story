@@ -1,4 +1,6 @@
-import { useState } from "react";
+
+import { useState, useRef } from "react";
+import gsap from "gsap";
 
 import Hero from "./components/Hero";
 import Shire from "./components/Shire";
@@ -8,67 +10,106 @@ import Moria from "./components/Moria";
 import Lothlorien from "./components/Lothlorien";
 import MinasTirith from "./components/MinasTirith";
 import PelennorFields from "./components/PelennorFields";
-import ReturnOfTheKing from "./components/ReturnOfTheKing"; 
+import ReturnOfTheKing from "./components/ReturnOfTheKing";
 
 import "./App.css";
 
 function App() {
   const [currentScene, setCurrentScene] = useState("hero");
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const overlayRef = useRef(null);
+  const transitionLock = useRef(false);
+
+  const changeScene = (nextScene) => {
+    if (transitionLock.current || nextScene === currentScene) return;
+
+    transitionLock.current = true;
+    setIsTransitioning(true);
+
+    gsap.to(overlayRef.current, {
+      opacity: 1,
+      duration: 0.65,
+      ease: "power2.inOut",
+      onComplete: () => {
+        setCurrentScene(nextScene);
+
+        requestAnimationFrame(() => {
+          gsap.to(overlayRef.current, {
+            opacity: 0,
+            duration: 0.9,
+            ease: "power2.inOut",
+            onComplete: () => {
+              setIsTransitioning(false);
+              transitionLock.current = false;
+            },
+          });
+        });
+      },
+    });
+  };
 
   return (
     <div className="app">
+      <div
+        ref={overlayRef}
+        className="cinematic-transition"
+        aria-hidden="true"
+      />
 
       {currentScene === "hero" && (
         <Hero
-          onEnter={() => setCurrentScene("shire")}
+          onEnter={() => changeScene("shire")}
         />
       )}
 
       {currentScene === "shire" && (
         <Shire
-          onContinue={() => setCurrentScene("rivendell")}
+          onContinue={() => changeScene("rivendell")}
         />
       )}
 
       {currentScene === "rivendell" && (
         <Rivendell
-          onContinue={() => setCurrentScene("mountains")}
+          onContinue={() => changeScene("mountains")}
         />
       )}
 
       {currentScene === "mountains" && (
         <MistyMountains
-          onContinue={() => setCurrentScene("moria")}
+          onContinue={() => changeScene("moria")}
         />
       )}
 
       {currentScene === "moria" && (
         <Moria
-          onContinue={() => setCurrentScene("lothlorien")}
+          onContinue={() => changeScene("lothlorien")}
         />
       )}
 
       {currentScene === "lothlorien" && (
         <Lothlorien
-          onContinue={() => setCurrentScene("minas")}
+          onContinue={() => changeScene("minas")}
         />
       )}
 
       {currentScene === "minas" && (
-       <MinasTirith
-       onContinue={() => setCurrentScene("pelennor")}
-       />
+        <MinasTirith
+          onContinue={() => changeScene("pelennor")}
+        />
       )}
+
       {currentScene === "pelennor" && (
-  <PelennorFields
-    onContinue={() => setCurrentScene("king")}
-  />
-)}
+        <PelennorFields
+          onContinue={() => changeScene("king")}
+        />
+      )}
+
       {currentScene === "king" && (
-  <ReturnOfTheKing
-    onReplay={() => setCurrentScene("hero")}
-  />
-)}
+        <ReturnOfTheKing
+          onReplay={() => changeScene("hero")}
+        />
+      )}
     </div>
   );
 }

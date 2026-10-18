@@ -11,6 +11,7 @@ import Lothlorien from "./components/Lothlorien";
 import MinasTirith from "./components/MinasTirith";
 import PelennorFields from "./components/PelennorFields";
 import ReturnOfTheKing from "./components/ReturnOfTheKing";
+import JourneyProgress from "./components/JourneyProgress";
 
 import "./App.css";
 
@@ -91,6 +92,8 @@ const changeScene = (nextScene) => {
         className="cinematic-transition"
         aria-hidden="true"
       />
+
+      <JourneyProgress currentScene={currentScene} />
 
       {currentScene === "hero" && (
         <Hero

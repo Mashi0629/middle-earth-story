@@ -4793,3 +4793,31 @@ body {
     letter-spacing: 2px;
   }
 }
+
+
+/* =========================================
+   CINEMATIC SCENE TRANSITIONS
+========================================= */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.cinematic-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      #100f12 0%,
+      #050507 75%
+    );
+
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}

@@ -21,33 +21,68 @@ function App() {
   const overlayRef = useRef(null);
   const transitionLock = useRef(false);
 
-  const changeScene = (nextScene) => {
-    if (transitionLock.current || nextScene === currentScene) return;
+  
+const changeScene = (nextScene) => {
+  if (transitionLock.current || nextScene === currentScene) return;
 
-    transitionLock.current = true;
-    setIsTransitioning(true);
+  transitionLock.current = true;
+  setIsTransitioning(true);
 
-    gsap.to(overlayRef.current, {
-      opacity: 1,
+  const overlay = overlayRef.current;
+  const currentContent = document.querySelector(
+    ".app > section"
+  );
+
+  const zoomOutCurrentScene = () => {
+    if (!currentContent) return;
+
+    gsap.to(currentContent, {
+      scale: 1.035,
       duration: 0.65,
-      ease: "power2.inOut",
-      onComplete: () => {
-        setCurrentScene(nextScene);
-
-        requestAnimationFrame(() => {
-          gsap.to(overlayRef.current, {
-            opacity: 0,
-            duration: 0.9,
-            ease: "power2.inOut",
-            onComplete: () => {
-              setIsTransitioning(false);
-              transitionLock.current = false;
-            },
-          });
-        });
-      },
+      ease: "power2.in",
     });
   };
+
+  zoomOutCurrentScene();
+
+  gsap.to(overlay, {
+    opacity: 1,
+    duration: 0.65,
+    ease: "power2.inOut",
+    onComplete: () => {
+      setCurrentScene(nextScene);
+
+      requestAnimationFrame(() => {
+        const nextContent = document.querySelector(
+          ".app > section"
+        );
+
+        if (nextContent) {
+          gsap.set(nextContent, {
+            scale: 1.035,
+          });
+
+          gsap.to(nextContent, {
+            scale: 1,
+            duration: 1.1,
+            ease: "power3.out",
+          });
+        }
+
+        gsap.to(overlay, {
+          opacity: 0,
+          duration: 0.9,
+          ease: "power2.inOut",
+          onComplete: () => {
+            setIsTransitioning(false);
+            transitionLock.current = false;
+          },
+        });
+      });
+    },
+  });
+};
+
 
   return (
     <div className="app">
